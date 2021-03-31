@@ -2,7 +2,7 @@
 # 27/01/2021 autor: Alejandro Sandoval Rodriguez
 #!/bin/bash
 DIRSHAPEFILE=""
-for x in {1..32}
+for x in {1..2}
 do
 if [ $x -le 9 ];
        then
