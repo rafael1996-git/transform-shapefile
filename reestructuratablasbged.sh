@@ -1,5 +1,5 @@
 #!/bin/bash
-for x in {01..02}
+for x in {01..32}
 do
   DBNAME="bged$x"
  echo "$DBNAME"
@@ -187,7 +187,7 @@ psql -U postgres -d "$DBNAME" -c "copy (select 'alter table '||table_schema||'.'
 
 done
 
-for x in {01..02}
+for x in {01..32}
 do
  DBNAME="bged$x"
 echo "$DBNAME realizando alter a la bases de datos"
@@ -250,5 +250,5 @@ psql -U postgres -d "$DBNAME" -f /var/lib/pgsql/reestructuracionbged/renamelocal
 psql -U postgres -d "$DBNAME" -f /var/lib/pgsql/reestructuracionbged/renamedistritolocal$x.sql
 psql -U postgres -d "$DBNAME" -f /var/lib/pgsql/reestructuracionbged/renamedescripcion$x.sql
 psql -U postgres -d "$DBNAME" -f /var/lib/pgsql/reestructuracionbged/llavesprimariaid$x.sql
-psql -U postgres -d "$DBNAME" -f /home/alejo/Documentos/ambShapefile/transform-shapefile/fase3.sql
+psql -U postgres -d "$DBNAME" -f /home/alejo/Documentos/transform-shapefile/fase3.sql
 done
